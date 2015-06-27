@@ -1,0 +1,332 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5FBF94101B3F3D4300048958 /* DYRM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF940E1B3F3D4300048958 /* DYRM.xcdatamodeld */; };
+		5FBF94171B3F3D4300048958 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF94161B3F3D4300048958 /* Images.xcassets */; };
+		5FBF94321B3F3EC000048958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF94311B3F3EC000048958 /* AppDelegate.swift */; };
+		5FBF94351B3F3F1F00048958 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF94331B3F3F1F00048958 /* DetailViewController.swift */; };
+		5FBF94361B3F3F1F00048958 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF94341B3F3F1F00048958 /* ListViewController.swift */; };
+		5FBF94381B3F3F8100048958 /* BigText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF94371B3F3F8100048958 /* BigText.swift */; };
+		5FBF94391B3F409300048958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF94131B3F3D4300048958 /* Main.storyboard */; };
+		5FBF943A1B3F409800048958 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF94181B3F3D4300048958 /* LaunchScreen.xib */; };
+		5FBF943C1B3F415400048958 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF943B1B3F415400048958 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5FBF94081B3F3D4300048958 /* DYRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FBF940F1B3F3D4300048958 /* DYRM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DYRM.xcdatamodel; sourceTree = "<group>"; };
+		5FBF94141B3F3D4300048958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5FBF94161B3F3D4300048958 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5FBF94191B3F3D4300048958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5FBF94311B3F3EC000048958 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5FBF94331B3F3F1F00048958 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5FBF94341B3F3F1F00048958 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		5FBF94371B3F3F8100048958 /* BigText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigText.swift; sourceTree = "<group>"; };
+		5FBF943B1B3F415400048958 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5FBF94051B3F3D4300048958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F6403541B0801EF004B709C = {
+			isa = PBXGroup;
+			children = (
+				5FBF94091B3F3D4300048958 /* Do You Read Me */,
+				5F64035E1B0801EF004B709C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F64035E1B0801EF004B709C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FBF94081B3F3D4300048958 /* DYRM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FBF94091B3F3D4300048958 /* Do You Read Me */ = {
+			isa = PBXGroup;
+			children = (
+				5FBF94311B3F3EC000048958 /* AppDelegate.swift */,
+				5FBF94331B3F3F1F00048958 /* DetailViewController.swift */,
+				5FBF94341B3F3F1F00048958 /* ListViewController.swift */,
+				5FBF94131B3F3D4300048958 /* Main.storyboard */,
+				5FBF94161B3F3D4300048958 /* Images.xcassets */,
+				5FBF94181B3F3D4300048958 /* LaunchScreen.xib */,
+				5FBF940E1B3F3D4300048958 /* DYRM.xcdatamodeld */,
+				5FBF94371B3F3F8100048958 /* BigText.swift */,
+				5FBF940A1B3F3D4300048958 /* Supporting Files */,
+			);
+			path = "Do You Read Me";
+			sourceTree = "<group>";
+		};
+		5FBF940A1B3F3D4300048958 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FBF943B1B3F415400048958 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5FBF94071B3F3D4300048958 /* DYRM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FBF94271B3F3D4400048958 /* Build configuration list for PBXNativeTarget "DYRM" */;
+			buildPhases = (
+				5FBF94041B3F3D4300048958 /* Sources */,
+				5FBF94051B3F3D4300048958 /* Frameworks */,
+				5FBF94061B3F3D4300048958 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DYRM;
+			productName = "Do You Read Me";
+			productReference = 5FBF94081B3F3D4300048958 /* DYRM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F6403551B0801EF004B709C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Todd Anderson";
+				TargetAttributes = {
+					5FBF94071B3F3D4300048958 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = RN7PMRR98W;
+					};
+				};
+			};
+			buildConfigurationList = 5F6403581B0801EF004B709C /* Build configuration list for PBXProject "DYRM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F6403541B0801EF004B709C;
+			productRefGroup = 5F64035E1B0801EF004B709C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FBF94071B3F3D4300048958 /* DYRM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5FBF94061B3F3D4300048958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FBF943C1B3F415400048958 /* Info.plist in Resources */,
+				5FBF943A1B3F409800048958 /* LaunchScreen.xib in Resources */,
+				5FBF94391B3F409300048958 /* Main.storyboard in Resources */,
+				5FBF94171B3F3D4300048958 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FBF94041B3F3D4300048958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FBF94381B3F3F8100048958 /* BigText.swift in Sources */,
+				5FBF94321B3F3EC000048958 /* AppDelegate.swift in Sources */,
+				5FBF94101B3F3D4300048958 /* DYRM.xcdatamodeld in Sources */,
+				5FBF94361B3F3F1F00048958 /* ListViewController.swift in Sources */,
+				5FBF94351B3F3F1F00048958 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5FBF94131B3F3D4300048958 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FBF94141B3F3D4300048958 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5FBF94181B3F3D4300048958 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FBF94191B3F3D4300048958 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F64037D1B0801EF004B709C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F64037E1B0801EF004B709C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FBF94281B3F3D4400048958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = DYRM;
+			};
+			name = Debug;
+		};
+		5FBF94291B3F3D4400048958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = DYRM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F6403581B0801EF004B709C /* Build configuration list for PBXProject "DYRM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F64037D1B0801EF004B709C /* Debug */,
+				5F64037E1B0801EF004B709C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FBF94271B3F3D4400048958 /* Build configuration list for PBXNativeTarget "DYRM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FBF94281B3F3D4400048958 /* Debug */,
+				5FBF94291B3F3D4400048958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5FBF940E1B3F3D4300048958 /* DYRM.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5FBF940F1B3F3D4300048958 /* DYRM.xcdatamodel */,
+			);
+			currentVersion = 5FBF940F1B3F3D4300048958 /* DYRM.xcdatamodel */;
+			path = DYRM.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5F6403551B0801EF004B709C /* Project object */;
+}
