@@ -24,7 +24,7 @@
         <!--List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="Do_You_Read_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="BYZ-38-t0r" customClass="ListViewController" customModule="DYRM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -108,7 +108,7 @@
         <!--Detail View Controller-->
         <scene sceneID="tvj-dT-V0N">
             <objects>
-                <viewController id="7Zi-pL-tOl" customClass="DetailViewController" customModule="Do_You_Read_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Zi-pL-tOl" customClass="DetailViewController" customModule="DYRM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kgL-EM-rID"/>
                         <viewControllerLayoutGuide type="bottom" id="CJn-ao-ifk"/>
@@ -216,23 +216,31 @@
                                     <outlet property="delegate" destination="7Zi-pL-tOl" id="0EP-BD-vGD"/>
                                 </connections>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DetailBlankState" translatesAutoresizingMaskIntoConstraints="NO" id="3aL-Wg-7fk">
+                                <rect key="frame" x="16" y="20" width="568" height="435"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.19607843137254902" green="0.15686274509803921" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="kPb-dA-GDv" secondAttribute="trailing" constant="-8" id="1ws-pY-I1c"/>
                             <constraint firstItem="kPb-dA-GDv" firstAttribute="leading" secondItem="1N3-Dl-DvQ" secondAttribute="leadingMargin" constant="-8" id="B1v-uy-2fe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3aL-Wg-7fk" secondAttribute="trailing" id="E5X-4c-S4s"/>
                             <constraint firstItem="hqg-FI-Eos" firstAttribute="leading" secondItem="1N3-Dl-DvQ" secondAttribute="leading" id="IbT-oI-Poy"/>
                             <constraint firstItem="Ue9-yX-3LI" firstAttribute="trailing" secondItem="1N3-Dl-DvQ" secondAttribute="trailingMargin" id="JmK-pL-Xbs"/>
+                            <constraint firstItem="3aL-Wg-7fk" firstAttribute="top" secondItem="kgL-EM-rID" secondAttribute="bottom" id="Rea-wJ-dcm"/>
+                            <constraint firstItem="hqg-FI-Eos" firstAttribute="top" secondItem="3aL-Wg-7fk" secondAttribute="bottom" constant="85" id="YWP-z2-mxa"/>
                             <constraint firstItem="Ue9-yX-3LI" firstAttribute="top" secondItem="kgL-EM-rID" secondAttribute="bottom" id="ayh-vw-53U"/>
                             <constraint firstItem="hqg-FI-Eos" firstAttribute="top" secondItem="kPb-dA-GDv" secondAttribute="bottom" id="eqS-Iz-2Rg"/>
                             <constraint firstItem="Ue9-yX-3LI" firstAttribute="leading" secondItem="1N3-Dl-DvQ" secondAttribute="leadingMargin" id="jWM-aa-sjL"/>
                             <constraint firstItem="CJn-ao-ifk" firstAttribute="top" secondItem="hqg-FI-Eos" secondAttribute="bottom" id="k8J-xY-JXO"/>
+                            <constraint firstItem="3aL-Wg-7fk" firstAttribute="leading" secondItem="1N3-Dl-DvQ" secondAttribute="leadingMargin" id="raH-d5-bqt"/>
                             <constraint firstItem="kPb-dA-GDv" firstAttribute="top" secondItem="1N3-Dl-DvQ" secondAttribute="topMargin" constant="8" id="rmS-TR-4kb"/>
                             <constraint firstAttribute="trailing" secondItem="hqg-FI-Eos" secondAttribute="trailing" id="tcz-1S-Z2I"/>
                             <constraint firstItem="hqg-FI-Eos" firstAttribute="top" secondItem="Ue9-yX-3LI" secondAttribute="bottom" id="xI7-7r-CK4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blankStateImage" destination="3aL-Wg-7fk" id="heK-cG-rob"/>
                         <outlet property="label" destination="Ue9-yX-3LI" id="ftZ-h6-cF2"/>
                         <outlet property="leftButton" destination="grf-Ng-Q5z" id="QHA-Lq-uNQ"/>
                         <outlet property="leftLabel" destination="PMD-xN-Pyl" id="RPL-Ck-EuD"/>
@@ -250,5 +258,6 @@
     </scenes>
     <resources>
         <image name="Add-Icon" width="18" height="18"/>
+        <image name="DetailBlankState" width="640" height="640"/>
     </resources>
 </document>

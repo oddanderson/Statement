@@ -19,6 +19,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
   @IBOutlet weak private var rightLabel: UILabel!
   @IBOutlet weak private var toolbar: UIView!
   @IBOutlet weak private var toolbarConstraint: NSLayoutConstraint!
+  @IBOutlet weak private var blankStateImage: UIImageView!
   
   let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
   
@@ -41,6 +42,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     label.lineBreakMode = NSLineBreakMode.ByWordWrapping
     textView.text = item.text
     label.text = item.text
+    updateImage(item.text)
     setupForReadOnly(readOnly, isSaved: isSaved)
     if (!readOnly) {
       textView.becomeFirstResponder()
@@ -97,6 +99,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         options: animationCurve,
         animations: {
           self.view.layoutIfNeeded()
+          self.updateImage(self.label.text!)
         },
         completion: nil)
     }  }
@@ -143,14 +146,25 @@ class DetailViewController: UIViewController, UITextViewDelegate {
       self.navigationController?.popViewControllerAnimated(true)
     } else {
       textView.text = ""
+      updateImage(textView.text)
     }
   }
   
   func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    let newText = (textView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
+    updateImage(newText)
     if (text == "\n") {
       textView.resignFirstResponder()
     }
     return true
+  }
+  
+  func updateImage(text: String) {
+    if (count(text) == 0) {
+      blankStateImage.alpha = 1
+    } else {
+      blankStateImage.alpha = 0
+    }
   }
   
   

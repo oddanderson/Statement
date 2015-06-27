@@ -15,7 +15,6 @@
 		5FBF94381B3F3F8100048958 /* BigText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF94371B3F3F8100048958 /* BigText.swift */; };
 		5FBF94391B3F409300048958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF94131B3F3D4300048958 /* Main.storyboard */; };
 		5FBF943A1B3F409800048958 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF94181B3F3D4300048958 /* LaunchScreen.xib */; };
-		5FBF943C1B3F415400048958 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF943B1B3F415400048958 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,7 +139,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FBF943C1B3F415400048958 /* Info.plist in Resources */,
 				5FBF943A1B3F409800048958 /* LaunchScreen.xib in Resources */,
 				5FBF94391B3F409300048958 /* Main.storyboard in Resources */,
 				5FBF94171B3F3D4300048958 /* Images.xcassets in Resources */,
@@ -312,6 +310,7 @@
 				5FBF94291B3F3D4400048958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

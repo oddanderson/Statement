@@ -16,12 +16,17 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
   private var storedItems: [BigText]?
   private var curState = 0
   private var animate = false
+  private var blankImage: UIImageView!
   
   let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
   
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    blankImage = UIImageView()
+    blankImage.image = UIImage(named: "ListBlankState")
+    blankImage.contentMode = UIViewContentMode.ScaleAspectFit
+    blankImage.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 400)
     updateList()
     tableView.tableFooterView = UIView.new()
     pulsateButton()
@@ -46,6 +51,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var error: NSError?
     if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as? [BigText] {
       storedItems = fetchResults.sorted({ (item1: BigText, item2: BigText) -> Bool in return item1.lastOpened.timeIntervalSince1970 > item2.lastOpened.timeIntervalSince1970 })
+      if (storedItems!.count > 0) {
+        tableView.tableFooterView = UIView.new()
+      } else {
+        tableView.tableFooterView = blankImage
+      }
     }
   }
   
