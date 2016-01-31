@@ -19,12 +19,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private var animate = false
   
   let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-  
+   
 
   override func viewDidLoad() {
     super.viewDidLoad()
     updateList()
-    tableView.tableFooterView = UIView.new()
+    tableView.tableFooterView = UIView.init()
     pulsateButton()
   }
   
@@ -44,16 +44,21 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
   
   func updateList() {
     let fetchRequest = NSFetchRequest(entityName: "BigText")
-    var error: NSError?
-    if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as? [BigText] {
-        storedItems = fetchResults.sorted({ (item1: BigText, item2: BigText) -> Bool in return item1.lastOpened.timeIntervalSince1970 > item2.lastOpened.timeIntervalSince1970 })
+    do {
+        let fetchResults = try managedObjectContext!.executeFetchRequest(fetchRequest) as? [BigText]
+        storedItems = fetchResults!.sort({ (item1: BigText, item2: BigText) -> Bool in return item1.lastOpened.timeIntervalSince1970 > item2.lastOpened.timeIntervalSince1970 })
+        // success ...
+    } catch let error as NSError {
+        // failure
+        print("Fetch failed: \(error.localizedDescription)")
     }
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    var item = sender! as! BigText
-    var detailVC = segue.destinationViewController as! DetailViewController
-    if (count(item.text) > 0) {
+    let item = sender! as! BigText
+    let detailVC = segue.destinationViewController as! DetailViewController
+    let length = (item.text as NSString).length
+    if (length > 0) {
       detailVC.readOnly = true
       detailVC.isSaved = true
     }
@@ -76,7 +81,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
   
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    var item : BigText! = storedItems![indexPath.row] as BigText
+    let item : BigText! = storedItems![indexPath.row] as BigText
     if let ns_str:NSString = item.text as NSString? {
       
       let sizeOfString = ns_str.boundingRectWithSize(
@@ -90,8 +95,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell : UITableViewCell?
-    cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+    var cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell?
     
     if (cell == nil) {
       cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
@@ -101,22 +105,27 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
       cell?.textLabel?.font = UIFont.systemFontOfSize(25)
     }
     
-    var item : BigText! = storedItems![indexPath.row] as BigText
+    let item : BigText! = storedItems![indexPath.row] as BigText
     cell!.textLabel?.text = item.text
     
     return cell!
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    var item : BigText! = storedItems![indexPath.row] as BigText
+    let item : BigText! = storedItems![indexPath.row] as BigText
     item.lastOpened = NSDate()
-    managedObjectContext?.save(nil)
-    self.performSegueWithIdentifier("PushBigText", sender: item)
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    do {
+        try managedObjectContext?.save()
+        self.performSegueWithIdentifier("PushBigText", sender: item)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    } catch let error as NSError {
+        // failure
+        print("Save failed: \(error.localizedDescription)")
+    }
   }
   
   func pulsateButton() {
-    var timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("updateButton"), userInfo: nil, repeats: true)
+    _ = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("updateButton"), userInfo: nil, repeats: true)
   }
   
   func updateButton() {

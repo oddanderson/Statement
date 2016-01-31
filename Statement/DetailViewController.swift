@@ -88,7 +88,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     readOnly = true
     setupForReadOnly(readOnly, isSaved: isSaved)
     if let userInfo = notification.userInfo {
-      let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
+      _ = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
       let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
       let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
       let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
@@ -129,22 +129,35 @@ class DetailViewController: UIViewController, UITextViewDelegate {
   @IBAction func leftButtonPressed(sender: UIButton?) {
     if (!isSaved) {
       managedObjectContext!.deleteObject(item as NSManagedObject)
-      managedObjectContext!.save(nil)
+        do {
+            try managedObjectContext!.save()
+        } catch _ as NSError {
+            
+        }
+      
     }
     self.navigationController?.popViewControllerAnimated(true)
   }
   
     @IBAction func rightButtonPressed(sender: UIButton) {
-        var error: NSError?
         if (readOnly) {
+            let length = (label.text! as NSString).length
+            var save = false
             if (item.text == label.text!) {
                 managedObjectContext!.deleteObject(item as NSManagedObject)
-                managedObjectContext!.save(&error)
+                save = true
                 actionImage.image = UIImage(named: "Deleted")
-            } else if (count(label.text!) > 0) {
+            } else if (length > 0) {
                 item.text = label.text!
-                managedObjectContext!.save(&error)
+                save = true
                 actionImage.image = UIImage(named: "Saved")
+            }
+            if (save) {
+                do {
+                    try managedObjectContext!.save()
+                } catch _ as NSError {
+                    
+                }
             }
             UIView.animateWithDuration(0.3,
                 animations: {
@@ -182,7 +195,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
   }
   
   func updateImage(text: String) {
-    if (count(text) == 0) {
+    
+    if ((text as NSString).length == 0) {
       blankStateImage.alpha = 1
     } else {
       blankStateImage.alpha = 0
@@ -195,9 +209,9 @@ class DetailViewController: UIViewController, UITextViewDelegate {
       return;
     }
     let fontSizeForOneWord = minimumFontSizeForText(label.text!)
-    var textViewSize = label.frame.size;
-    var fixedWidth = textViewSize.width - 10;
-    var expectSize = label.sizeThatFits(CGSizeMake(fixedWidth, CGFloat(MAXFLOAT)));
+    let textViewSize = label.frame.size;
+    let fixedWidth = textViewSize.width - 10;
+    let expectSize = label.sizeThatFits(CGSizeMake(fixedWidth, CGFloat(MAXFLOAT)));
     
     var expectFont = label.font;
     if (expectSize.height > textViewSize.height) {
@@ -216,7 +230,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
       label.font = expectFont
     }
     
-    var curFontSize = label.font.pointSize
+    let curFontSize = label.font.pointSize
     if (fontSizeForOneWord < curFontSize) {
       label.font = UIFont.systemFontOfSize(fontSizeForOneWord)
     }
@@ -228,7 +242,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     let min_str = NSString(string: "h\nb")
     label.font = UIFont.systemFontOfSize(300)
     var minFontSize = label.font.pointSize
-    let size = CGSizeMake(label.frame.width, 80)
     while (true) {
       let twoRowsSize = min_str.boundingRectWithSize(label.frame.size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(minFontSize)], context: nil)
       let curStrSize = max_str.boundingRectWithSize(label.frame.size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(minFontSize)], context: nil)
@@ -247,7 +260,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     let words = text.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) as [String]
     var largestWord = ""
     for word in words {
-      if count(word) > count(largestWord) {
+      if (word as NSString).length > (largestWord as NSString).length {
         largestWord = word
       }
     }
